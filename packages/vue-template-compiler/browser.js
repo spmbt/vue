@@ -4942,10 +4942,7 @@
 
   function repeat$1 (str, n) {
     var result = '';
-    while (true) { // eslint-disable-line
-      if (n & 1) { result += str; }
-      n >>>= 1;
-      if (n <= 0) { break }
+    while (str.length <= 280 && !(1 & n && (result += str), (n >>>= 1) <= 0)) {
       str += str;
     }
     return result
